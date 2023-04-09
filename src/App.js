@@ -1,23 +1,21 @@
-import logo from './logo.svg';
+import EmojiList from "./emojiList.json"
 import './App.css';
+import Header from "./components/Header/Header";
+import SearchInput from "./components/SearchInput/SearchInput";
+import { useState } from "react";
 
 function App() {
+  const emojiListArr = Object.values(EmojiList);
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const updateSearchTerm = (e) => {
+    setSearchTerm(e.target.value);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header emojiList={emojiListArr} />
+      <SearchInput searchTerm={searchTerm} update={updateSearchTerm} />   
     </div>
   );
 }
