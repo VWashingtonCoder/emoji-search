@@ -17,3 +17,26 @@
   font-size: 2em;
   margin: 0 15px;
 }
+
+#SearchInput input {
+  width: 97%;
+  height: 2.5em;
+  margin: auto;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid black;
+  font-size: 20px;
+}
+
+#EmojiRow {
+  text-align: left;
+  font-size: 24px;
+  padding: 10px;
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+}
+
+.emoji-row.title {
+  margin-left: 10px;
+}
+
