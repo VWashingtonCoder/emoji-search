@@ -11,11 +11,10 @@ function App() {
   const [results, setResults] = useState(emojiListArr.slice(0, 20));
 
   function findResults(term) {
-    const newResults = emojiListArr.filter(emoji => emoji.keywords.includes(term));
-    return newResults;
+    return emojiListArr.filter(emoji => emoji.keywords.includes(term)).slice(0, 20);
   }
 
-  const updateSearchTerm = (e) => {
+  const searchEmojiList = (e) => {
     const term = e.target.value
     const results = findResults(term.toLowerCase()); 
 
@@ -26,7 +25,7 @@ function App() {
   return (
     <div className="App">
       <Header emojiList={emojiListArr} />
-      <SearchInput searchTerm={searchTerm} update={updateSearchTerm} />
+      <SearchInput searchTerm={searchTerm} update={searchEmojiList} />
       <EmojiResults results={results} />   
     </div>
   );
